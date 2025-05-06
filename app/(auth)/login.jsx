@@ -17,11 +17,12 @@ import Spacer from "../../components/Spacer";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user } = useUser();
+  const { login } = useUser();
 
   const handleSubmit = () => {
-    console.log("current user: ", user);
-    console.log("Login form submitted", email, password);
+    try {
+      login(email, password);
+    } catch (error) {}
   };
 
   return (

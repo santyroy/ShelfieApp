@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
@@ -17,8 +18,12 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { register } = useUser();
+
   const handleSubmit = () => {
-    console.log("register form submitted", email, password);
+    try {
+      register(email, password);
+    } catch (error) {}
   };
 
   return (
