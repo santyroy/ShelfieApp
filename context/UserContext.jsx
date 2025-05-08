@@ -13,7 +13,7 @@ export const UserProvider = ({ children }) => {
       const response = await account.get();
       setUser(response);
     } catch (error) {
-      console.log(error.message);
+      throw Error(error.message);
     }
   };
 
@@ -23,7 +23,7 @@ export const UserProvider = ({ children }) => {
       // once user is registered we need to call the login method to manually login the user
       await login(email, password);
     } catch (error) {
-      console.log(error.message);
+      throw Error(error.message);
     }
   };
   const logout = async () => {};
