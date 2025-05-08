@@ -25,5 +25,11 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "react-native-appwrite": {
+      "expo-file-system": "18.*.*",
+      "react-native": ">=0.76.7 <1.0.0"
+    }
+  }
 }
