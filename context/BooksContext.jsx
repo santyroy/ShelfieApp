@@ -20,7 +20,6 @@ export const BooksProvider = ({ children }) => {
         [Query.equal("userId", user.$id)]
       );
       setBooks(response.documents);
-      console.log(books);
     } catch (error) {
       console.error(error);
     }
